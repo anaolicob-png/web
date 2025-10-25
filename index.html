@@ -1,1 +1,110 @@
-Pagina web de Ana Olivares
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Ana Olivares — CV</title>
+	<meta name="description" content="CV de Ana Olivares — Economía, Historia y profesional en el departamento de Contabilidad." />
+		<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="container" role="main">
+		<header>
+			<div class="avatar" aria-hidden="true">AO</div>
+			<div class="heading">
+				<h1>Ana Olivares</h1>
+				<p>Profesional en Contabilidad — Economía · Historia</p>
+				<p style="color:var(--muted);font-size:13px;margin-top:6px">Trabajo en el departamento de Contabilidad de una empresa</p>
+			</div>
+		</header>
+		<main>
+			<section>
+				<div class="section">
+					<h2>Resumen</h2>
+					<p class="card">Soy Ana Olivares. Estudié Economía e Historia y actualmente trabajo en el departamento de Contabilidad de una empresa. Me centro en la gestión y control contable, el análisis de datos financieros y la mejora de procesos administrativos con una perspectiva analítica e histórica que facilita la comprensión del contexto económico.</p>
+				</div>
+
+				<div class="section">
+					<h2>Educación</h2>
+					<div class="card">
+						<p style="margin:0"><strong>Economía</strong></p>
+						<p style="margin:4px 0 8px;color:var(--muted)">Formación universitaria en Economía</p>
+						<p style="margin:0"><strong>Historia</strong></p>
+						<p style="margin:4px 0 0;color:var(--muted)">Formación en Historia — enfoque en contextos socioeconómicos</p>
+					</div>
+				</div>
+
+				<div class="section">
+					<h2>Experiencia</h2>
+					<div class="card">
+						<ul>
+							<li><strong>Departamento de Contabilidad</strong> — Responsable de registros contables, conciliaciones y apoyo en cierres mensuales.</li>
+							<li>Colaboración con auditorías internas y externas; preparación de informes financieros para dirección.</li>
+							<li>Optimización de procesos administrativos y mejora en el control de gastos.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="section">
+					<h2>Habilidades</h2>
+					<div class="card">
+						<ul>
+							<li>Contabilidad financiera y registros contables</li>
+							<li>Análisis de datos y reporting</li>
+							<li>Herramientas: Excel (avanzado), hojas de cálculo, software contable</li>
+							<li>Comunicación y trabajo en equipo</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<aside>
+				<div class="section contact">
+					<h2>Contacto</h2>
+					<div class="card">
+						<p style="margin:0 0 8px"><strong>Email:</strong> <a href="mailto:ana.olivares@example.com">ana.olivares@example.com</a></p>
+						<p style="margin:0 0 8px"><strong>Teléfono:</strong> <a href="tel:+34123456789">+34 123 456 789</a></p>
+						<p style="margin:0 0 8px"><strong>Ubicación:</strong> España</p>
+						<p style="margin:0;font-size:13px;color:var(--muted)">Puedes descargar mi vCard:</p>
+						<p style="margin-top:8px"><a class="button" href="#" onclick="downloadVCard()">Descargar vCard</a></p>
+					</div>
+				</div>
+
+				<div class="section">
+					<h2>Idiomas</h2>
+					<div class="card">
+						<ul>
+							<li>Español — Nativo</li>
+							<li>Inglés — Intermedio/Alto</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+		</main>
+		<footer>
+			Página creada por Ana Olivares — CV resumido.
+		</footer>
+	</div>
+	<script>
+		function downloadVCard(){
+			const vcard = [
+				'BEGIN:VCARD',
+				'VERSION:3.0',
+				'FN:Ana Olivares',
+				'EMAIL;TYPE=INTERNET:ana.olivares@example.com',
+				'TEL;TYPE=CELL:+34123456789',
+				'END:VCARD'
+			].join('\n');
+			const blob = new Blob([vcard], {type:'text/vcard'});
+			const url = URL.createObjectURL(blob);
+			const a = document.createElement('a');
+			a.href = url;
+			a.download = 'Ana_Olivares.vcf';
+			document.body.appendChild(a);
+			a.click();
+			a.remove();
+			URL.revokeObjectURL(url);
+		}
+	</script>
+</body>
+</html>

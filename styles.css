@@ -1,0 +1,90 @@
+:root{
+  --bg: #f6f5fb;
+  --card: #ffffff;
+  --violet-900: #2d0353;
+  --violet-700: #6b46c1;
+  --violet-500: #9f7aea;
+  --violet-300: #d6bcfa;
+  --muted: #6b7280;
+  --accent: var(--violet-700);
+  --maxw: 900px;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  line-height:1.5;
+  margin:0;
+  background: linear-gradient(180deg, rgba(147,116,255,0.06) 0%, rgba(201,185,255,0.02) 100%), var(--bg);
+  color: #0f172a;
+  padding:32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+}
+
+.container{
+  width:100%;
+  max-width:var(--maxw);
+  background:var(--card);
+  border-radius:14px;
+  box-shadow: 0 8px 30px rgba(45,3,83,0.08);
+  overflow:hidden;
+  border: 1px solid rgba(111,66,193,0.06);
+}
+
+header{
+  padding:28px 32px;
+  border-bottom:1px solid rgba(111,66,193,0.06);
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+
+.avatar{
+  width:84px;
+  height:84px;
+  background: linear-gradient(135deg, var(--violet-700), var(--violet-500));
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-weight:700;
+  font-size:28px;
+  box-shadow: 0 6px 20px rgba(110,89,197,0.18);
+}
+
+.heading h1{margin:0;font-size:20px}
+.heading p{margin:4px 0 0;color:var(--muted)}
+
+main{display:grid;grid-template-columns:1fr 320px;gap:28px;padding:28px 32px}
+.section{margin-bottom:18px}
+
+h2{font-size:13px;margin:0 0 10px;color:var(--violet-700);text-transform:uppercase;letter-spacing:0.6px}
+ul{margin:0;padding-left:18px;color:#0f172a}
+.card{background:linear-gradient(180deg, rgba(159,122,234,0.04), rgba(255,255,255,0));border:1px solid rgba(111,66,193,0.06);padding:14px;border-radius:10px}
+.contact a{color:var(--violet-900);text-decoration:none}
+footer{padding:18px 32px;border-top:1px solid rgba(111,66,193,0.04);text-align:center;font-size:13px;color:var(--muted)}
+
+.button{display:inline-block;padding:8px 12px;border-radius:8px;background:linear-gradient(90deg,var(--violet-700),var(--violet-500));color:#fff;text-decoration:none}
+
+@media (max-width:800px){
+  main{grid-template-columns:1fr;padding:20px}
+  header{flex-direction:row}
+}
+
+@media print{
+  body{padding:0}
+  header,footer{display:none}
+  .container{box-shadow:none;border-radius:0}
+}
+
+/* Pequeños toques de accesibilidad */
+a:focus{outline:3px solid rgba(159,122,234,0.25);outline-offset:3px}
+.card p, .card li{font-size:14px}
+
+/* Tones adicionales para componentes futuros */
+.accent-strong{color:var(--violet-900)}
+.accent-soft{color:var(--violet-300)}
